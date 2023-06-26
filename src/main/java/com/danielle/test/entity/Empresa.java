@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "tb_test")
+@Table(name = "empresa")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -16,7 +16,7 @@ public class Empresa {
     @Setter(AccessLevel.NONE)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "nameFantasia", nullable = false)
     private String name;
 
     @Column(name = "cnpj", nullable = false, unique = true)
@@ -26,8 +26,8 @@ public class Empresa {
     private Integer cep;
 
     @Builder
-    public Empresa(String name, String cnpj, Integer cep) {
-        this.name = name;
+    public Empresa(String nameFantasia, String cnpj, Integer cep) {
+        this.nameFantasia = nameFantasia;
         this.cnpj = cnpj;
         this.cep = cep;
     }

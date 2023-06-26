@@ -3,10 +3,13 @@ package com.danielle.test.util;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Component;
+
 import com.danielle.test.dto.request.FornecedorRequestDTO;
 import com.danielle.test.dto.response.FornecedorResponseDTO;
 import com.danielle.test.entity.Fornecedor;
 
+@Component
 public class FornecedorMapper {
        public Fornecedor toFornecedor(FornecedorRequestDTO FornecedorDTO) {
 

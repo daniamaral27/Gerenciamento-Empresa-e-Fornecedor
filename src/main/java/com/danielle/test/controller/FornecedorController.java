@@ -21,7 +21,7 @@ import com.danielle.test.service.FornecedorService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping(value = "/TestApi")
+@RequestMapping(value = "/Fornecedor")
 @RequiredArgsConstructor
 
 public class FornecedorController {

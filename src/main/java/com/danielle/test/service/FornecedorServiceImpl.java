@@ -19,47 +19,47 @@ import lombok.RequiredArgsConstructor;
 
 public class FornecedorServiceImpl implements FornecedorService {
 
-    private final FornecedorRepository FornecedorRepository;
+    private final FornecedorRepository fornecedorRepository;
 
-    private final FornecedorMapper FornecedorMapper;
+    private final FornecedorMapper fornecedorMapper;
 
 
     @Override
     public FornecedorResponseDTO findById(Long id) {
-     return FornecedorMapper.toFornecedorDTO(returnFornecedor(id));
+     return fornecedorMapper.toFornecedorDTO(returnFornecedor(id));
     }
 
     @Override
     public List<FornecedorResponseDTO> findAll() {
-        return FornecedorMapper.toPeopleDTO(FornecedorRepository.findAll());
+        return fornecedorMapper.toPeopleDTO(fornecedorRepository.findAll());
     }
 
     @Override
-    public FornecedorResponseDTO register(FornecedorRequestDTO FornecedorDTO) {
+    public FornecedorResponseDTO register(FornecedorRequestDTO fornecedorDTO) {
 
-        Fornecedor Fornecedor = FornecedorMapper.toFornecedor(FornecedorDTO);
+        Fornecedor fornecedor = fornecedorMapper.toFornecedor(fornecedorDTO);
 
-        return FornecedorMapper.toFornecedorDTO(FornecedorRepository.save(Fornecedor));
+        return fornecedorMapper.toFornecedorDTO(fornecedorRepository.save(fornecedor));
     }
 
     @Override
-    public FornecedorResponseDTO update(Long id, FornecedorRequestDTO FornecedorDTO) {
+    public FornecedorResponseDTO update(Long id, FornecedorRequestDTO fornecedorDTO) {
 
-        Fornecedor Fornecedor = returnFornecedor(id);
+        Fornecedor fornecedor = returnFornecedor(id);
 
-        FornecedorMapper.updateFornecedorData(Fornecedor, FornecedorDTO);
+        fornecedorMapper.updateFornecedorData(fornecedor, fornecedorDTO);
 
-        return FornecedorMapper.toFornecedorDTO(FornecedorRepository.save(Fornecedor));
+        return fornecedorMapper.toFornecedorDTO(fornecedorRepository.save(fornecedor));
     }
 
     @Override
     public String delete(Long id) {
-        FornecedorRepository.deleteById(id);
+        fornecedorRepository.deleteById(id);
         return "Fornecedor id: "+id+" deleted";
     }
 
     private Fornecedor returnFornecedor(Long id) {
-       return FornecedorRepository.findById(id)
+       return fornecedorRepository.findById(id)
                .orElseThrow(()-> new RuntimeException("Fornecedor wasn't fount on database"));
     }
 

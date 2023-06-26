@@ -14,7 +14,7 @@ public class EmpresaMapper {
     public Empresa toEmpresa(EmpresaRequestDTO EmpresaDTO) {
 
         return Empresa.builder()
-                .nameFantasia(EmpresaDTO.getName())
+                .nameFantasia(EmpresaDTO.getNameFantasia())
                 .cnpj(EmpresaDTO.getCnpj())
                 .cep(EmpresaDTO.getCep())
                 .build();
@@ -31,7 +31,7 @@ public class EmpresaMapper {
 
     public void updateEmpresaData(Empresa Empresa, EmpresaRequestDTO EmpresaDTO) {
 
-        Empresa.setName(EmpresaDTO.getName());
+        Empresa.setNameFantasia(EmpresaDTO.getNameFantasia());
         Empresa.setCnpj(EmpresaDTO.getCnpj());
         Empresa.setCep(EmpresaDTO.getCep());
 

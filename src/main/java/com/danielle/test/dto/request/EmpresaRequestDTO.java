@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public class EmpresaRequestDTO {
 
-    private String name;
+    private String nameFantasia;
 
     private String cnpj;
 

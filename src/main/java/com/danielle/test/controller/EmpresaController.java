@@ -22,7 +22,7 @@ import com.danielle.test.service.EmpresaService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping(value = "/TestApi")
+@RequestMapping(value = "/Empresa")
 @RequiredArgsConstructor
 
 public class EmpresaController {

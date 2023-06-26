@@ -9,7 +9,7 @@ public class EmpresaResponseDTO {
 
     private Long id;
 
-    private String name;
+    private String nameFantasia;
 
 
     private String Cnpj;
@@ -19,7 +19,7 @@ public class EmpresaResponseDTO {
 
     public EmpresaResponseDTO(Empresa empresa) {
         this.id = empresa.getId();
-        this.name = empresa.getName();
+        this.nameFantasia = empresa.getNameFantasia();
         this.Cnpj = empresa.getCnpj();
         this.cep = empresa.getCep();
     }
